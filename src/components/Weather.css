@@ -1,0 +1,37 @@
+.weather{
+    place-self: center;
+    padding: 40px;
+    border-radius: 10px;
+    background-image: linear-gradient(180deg, var(--mediumBlue), var(--darkBlue));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.searchBar{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchBar input{
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    padding-left: 25px;
+    color: var(--darkBlueOutline);
+    background-color: var(--lighterblue);
+    font-size: 18px;
+}
+
+
+#searchButton{
+    width: 30px;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: var(--mediumBlue);
+    cursor: pointer;
+    /* object-fit: contain; */
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Weather.css'
+import searchIcon from '../assets/searchIcon.png'
 
 const Weather = () => {
   return (
@@ -7,8 +8,7 @@ const Weather = () => {
         <div className='weather'>
             <div className='searchBar'>
                 <input type ="text" placeholder='Search'></input>
-                <button>Search</button>
-                {/* <img src="" alt/> */}
+                <img id='searchButton' src={searchIcon} alt=''/>
             </div>
         </div>
     </div>
