@@ -1,30 +1,15 @@
-/**
- * App.js - Main application component with routing configuration
- * Created for a weather app project
- * Last edited: 03/02/2025
- */
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+//use rafce to create a snippet
+import React from 'react'
+import './App.css';
+import Weather from './components/Weather';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Weather />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
