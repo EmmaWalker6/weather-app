@@ -1,3 +1,8 @@
+/**
+ * App.js - Main application component with routing configuration
+ * Created for a weather app project
+ * Last edited: 03/02/2025
+ */
 import logo from './logo.svg';
 import './App.css';
 

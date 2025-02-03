@@ -1,3 +1,25 @@
+/**
+ * App.css - Main style sheet for the application
+ * Created for a weather app project
+ * Last edited: 03/02/2025
+ */
+
+ /* app color palette */
+ :root{
+  --black: #001314;
+  --darkBlueOutline: #002A2D;
+  --darkBlue: #024950;
+  --redOutline: #894736;
+  --red: #ff6e49;
+  --mediumBlueOutline: #0FA4AF;
+  --mediumBlue: #5FC1CA;
+  --lightblueOutline: #AFDDE5;
+  --lightblue: #C1E5EB;
+  --lighterblue: #DFF2F5;
+  --white: #EFF9FA;
+  --whitewhite: #faffff;
+}
+
 .App {
   text-align: center;
 }
