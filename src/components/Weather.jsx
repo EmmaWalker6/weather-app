@@ -40,6 +40,18 @@ const Weather = () => {
     "50n": cloudyImage
   }
 
+  const switchDegreeType = () => {
+    // Using the functional update to ensure the latest state value
+    setIsMetric(prevIsMetric => !prevIsMetric);
+    
+  };
+
+  useEffect(() =>{
+    if (inputRef.current.value !== '') {
+      search(inputRef.current.value);
+    }
+  },[isMetric]);
+
   const getUnitType = () => (isMetric ? "metric" : "imperial");
 
   const search = async (city) => {
@@ -79,18 +91,7 @@ const Weather = () => {
     }
   }
 
-  const switchDegreeType = () => {
-    // Using the functional update to ensure the latest state value
-    setIsMetric(prevIsMetric => {
-      const newIsMetric = !prevIsMetric;
-      console.log("Switching Metric to: ", newIsMetric); 
-      return newIsMetric;
-    });
-    if(inputRef.current.value !== ''){
-      search(inputRef.current.value);
-    }
-
-  }
+  
 
   // const switchDegreeType = () => {
   //   setIsMetric(!isMetric);
