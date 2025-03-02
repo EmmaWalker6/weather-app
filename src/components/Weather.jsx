@@ -17,7 +17,6 @@ const Weather = () => {
 
   const [weatherData, setWeatherData] = useState(false);
   const [isMetric, setIsMetric] = useState(true);
-  // const [unitType, setUnitType] = useState({ stringValue: "metric" });
 
   const allIcons = {
     // Icon ids and what image we attach to them. The codes go for day and night and the description is commented on the side of each day
@@ -92,26 +91,6 @@ const Weather = () => {
     }
   }
 
-  
-
-  // const switchDegreeType = () => {
-  //   setIsMetric(!isMetric);
-  //   setUnitType(isMetric? { stringValue: "metric" } : { stringValue: "imperial" });
-  //   console.log("Switching unit to: ", unitType);
-  //   if(inputRef.current.value !== ''){
-  //     search(inputRef.current.value);
-  //   }
-
-  // }
-
-  // useEffect(() => {
-  //   //updating the unit type depending on if metric is true or false
-    
-  // }, [isMetric]) //checking if isMetric has changed 
-
-  // useEffect(()=>{
-  //   search("Sydney")
-  // }, [])
 
   return (
     <div className='site'>
@@ -119,7 +98,6 @@ const Weather = () => {
             <div className='searchBar'>
                 <p className='searchButton' onClick={switchDegreeType}>{isMetric ? 'C': 'F'}</p>
                 <input ref={inputRef} type ="text" placeholder='Search'></input>
-                {/* <img className='searchButton' src={searchIcon} alt='' onClick={()=>search(inputRef.current.value)}/> */}
                 <FaSearch className='searchButton' onClick={()=>search(inputRef.current.value)} />
                 
             </div>
@@ -135,7 +113,6 @@ const Weather = () => {
             {/* Otherwise we have no data */}
             
         </div>
-        {/* possibly add in huminity and wind speed */}
     </div>
   )
 }
