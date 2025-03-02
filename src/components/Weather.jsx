@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import './Weather.css'
-import searchIcon from '../assets/searchIcon.png'
-import cloudyImage from '../assets/cloudy.png'
-import drizzleImage from '../assets/drizzle.png'
-import partlyCloudyImage from '../assets/partlyCloudy.png'
-import snowingImage from '../assets/snowing.png'
-import sunnyImage from '../assets/sunny.png'
+import React, { useEffect, useRef, useState } from 'react';
+import './Weather.css';
+import searchIcon from '../assets/searchIcon.png';
+import cloudyImage from '../assets/cloudy.png';
+import drizzleImage from '../assets/drizzle.png';
+import partlyCloudyImage from '../assets/partlyCloudy.png';
+import snowingImage from '../assets/snowing.png';
+import sunnyImage from '../assets/sunny.png';
+import {FaSearch} from 'react-icons/fa';
 
 // Images from cleanpng
 
@@ -113,12 +114,13 @@ const Weather = () => {
   // }, [])
 
   return (
-    <div>
+    <div className='site'>
         <div className='weather'>
             <div className='searchBar'>
-                <p id='switchFtC' onClick={switchDegreeType}>{isMetric ? 'C': 'F'}</p>
+                <p className='searchButton' onClick={switchDegreeType}>{isMetric ? 'C': 'F'}</p>
                 <input ref={inputRef} type ="text" placeholder='Search'></input>
-                <img id='searchButton' src={searchIcon} alt='' onClick={()=>search(inputRef.current.value)}/>
+                {/* <img className='searchButton' src={searchIcon} alt='' onClick={()=>search(inputRef.current.value)}/> */}
+                <FaSearch className='searchButton' onClick={()=>search(inputRef.current.value)} />
                 
             </div>
             {/* Checking if we actually have weather data to display */}

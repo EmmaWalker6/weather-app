@@ -1,3 +1,9 @@
+.site{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .weather{
     place-self: center;
     padding: 40px;
@@ -28,14 +34,25 @@
 }
 
 
-#searchButton{
-    width: 30px;
-    padding: 12px;
-    border-radius: 50%;
+.searchButton{
+    display: grid;
+    place-items: center;
+    width: 30px; 
+    height: 30px; 
+    padding: 10px;
+    border-radius: 49%;
     background-color: var(--mediumBlue);
     cursor: pointer;
-    /* object-fit: contain; */
+    overflow: hidden;
+    position: relative; 
 }
+
+.searchButton img {
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
+}
+
 
 .weatherContent{
     display: flex;
