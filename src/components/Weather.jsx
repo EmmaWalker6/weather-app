@@ -62,7 +62,7 @@ const Weather = () => {
   }
 
   useEffect(()=>{
-    search("London")
+    search("Cameron Park")
   }, [])
 
   return (
@@ -73,9 +73,10 @@ const Weather = () => {
                 <img id='searchButton' src={searchIcon} alt=''/>
             </div>
             <div className='weatherContent'>
-                <img src={sunnyImage} alt="" className='weatherIcon'/>
-                <p className='temperature'>16-c</p>
-                <p className='location'>London</p>
+                <img src={weatherData.icon} alt="" className='weatherIcon'/>
+                <p className='temperature'>{weatherData.temperature} °c</p>
+                <p className='location'>{weatherData.location}</p>
+                <p className='humidity'>Humidity: {weatherData.humidity}%</p>
             </div>
         </div>
         {/* possibly add in huminity and wind speed */}

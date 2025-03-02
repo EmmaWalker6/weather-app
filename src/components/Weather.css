@@ -59,3 +59,9 @@
     font-size: 30px;
     line-height: 1;
 }
+
+.humidity{
+    color: var(--lightblue);
+    font-size: 20px;
+    line-height: 1;
+}
