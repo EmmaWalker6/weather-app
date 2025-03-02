@@ -16,7 +16,7 @@ const Weather = () => {
 
   const [weatherData, setWeatherData] = useState(false);
   const [isMetric, setIsMetric] = useState(true);
-  const [unitType, setUnitType] = useState({ stringValue: "metric" });
+  // const [unitType, setUnitType] = useState({ stringValue: "metric" });
 
   const allIcons = {
     // Icon ids and what image we attach to them. The codes go for day and night and the description is commented on the side of each day
@@ -40,6 +40,8 @@ const Weather = () => {
     "50n": cloudyImage
   }
 
+  const getUnitType = () => (isMetric ? "metric" : "imperial");
+
   const search = async (city) => {
     try {
       if(city === ""){
@@ -47,15 +49,11 @@ const Weather = () => {
         return;
       }
       const apiKey = process.env.REACT_APP_ID;
-      console.log("Using API Keyy:", apiKey);
+      console.log("In search Metric is:", isMetric);
 
-      if(isMetric){
-        setUnitType({ stringValue: "metric" });
-      }else{
-        setUnitType({ stringValue: "imperial" });
-      }
-
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unitType.stringValue}&appid=${apiKey}`;
+      const unitType = getUnitType();
+      console.log("Unit wanted is:", unitType);
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unitType}&appid=${apiKey}`;
 
       const response = await fetch(url);
       const data = await response.json();
@@ -82,12 +80,32 @@ const Weather = () => {
   }
 
   const switchDegreeType = () => {
-    setIsMetric(!isMetric);
+    // Using the functional update to ensure the latest state value
+    setIsMetric(prevIsMetric => {
+      const newIsMetric = !prevIsMetric;
+      console.log("Switching Metric to: ", newIsMetric); 
+      return newIsMetric;
+    });
     if(inputRef.current.value !== ''){
       search(inputRef.current.value);
     }
-    
+
   }
+
+  // const switchDegreeType = () => {
+  //   setIsMetric(!isMetric);
+  //   setUnitType(isMetric? { stringValue: "metric" } : { stringValue: "imperial" });
+  //   console.log("Switching unit to: ", unitType);
+  //   if(inputRef.current.value !== ''){
+  //     search(inputRef.current.value);
+  //   }
+
+  // }
+
+  // useEffect(() => {
+  //   //updating the unit type depending on if metric is true or false
+    
+  // }, [isMetric]) //checking if isMetric has changed 
 
   // useEffect(()=>{
   //   search("Sydney")
